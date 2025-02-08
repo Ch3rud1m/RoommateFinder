@@ -1,5 +1,5 @@
 const User = require('../model/userModel');
-const { matchUsersByYear } = require('../services/matchService');
+const { matchUsersByYear } = require('../service/matchService');
 
 // Function to create a new user
 const createUser = async (req, res) => {
