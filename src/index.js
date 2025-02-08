@@ -1,8 +1,11 @@
 // server.js
 const express = require('express');
 const dotenv = require('dotenv');
+const cors = require('cors');
+const mongoose = require('mongoose');
 const connectDB = require('./config/db');
 const userRoutes = require('./routes/userRoutes');
+const userController = require('./controllers/userController');
 
 // Initialize environment variables
 dotenv.config();
@@ -14,7 +17,11 @@ const app = express();
 app.use(express.json());  // For parsing JSON data
 
 // Connect to MongoDB
-connectDB();
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+});
 
 // Setup routes
 app.use('/api/users', userRoutes);
