@@ -8,20 +8,47 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  gradYear: {
-    type: Number,
-    required: true,
-  },
-  quadConnection: {
+  studentName: {
     type: String,
     required: true,
   },
+  absolutes: {
+    gradYear: {
+      type: Number,
+      required: true,
+    },
+    quadConnection: {
+      type: String,
+      required: true,
+    },
+    gender: {
+      type: String,
+      required: true,
+    }
+  },
+
   preferences: {
     sleepingHabits: {
       type: String,
       required: true,
     },
     cleanliness: {
+      type: Boolean,
+      required: true,
+    },
+    sexuallyActive: {
+      type: Boolean,
+      required: true,
+    },
+    substanceUse: {
+      type: Boolean,
+      required: true,
+    },
+    school: {
+      type: String,
+      required: true,
+    },
+    major: {
       type: String,
       required: true,
     },
