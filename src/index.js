@@ -5,7 +5,12 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const connectDB = require('./config/db');
 const userRoutes = require('./route/userRoutes');
-const User = require('./model/userModel'); // Import the User model
+const User = require('./model/userModel');
+
+//java parser
+const { spawn } = require('child_process');
+const bodyParser = require('body-parser');
+
 
 // Initialize environment variables
 dotenv.config();
@@ -22,12 +27,35 @@ connectDB();
 // Setup routes
 app.use('/api/users', userRoutes);
 
+//java parser logic
+app.use(bodyParser.json());
+app.use(express.static('public'));
+
+app.post('/run-java', (req, res) => {
+    const { program, arg } = req.body;
+    const javaProcess = spawn('java', ['-cp', 'bin', program, arg]);
+
+    let output = '';
+    javaProcess.stdout.on('data', (data) => {
+        output += data.toString();
+    });
+
+    javaProcess.stderr.on('data', (data) => {
+        output += data.toString();
+    });
+
+    javaProcess.on('close', (code) => {
+        res.send(output);
+    });
+});
+
 // Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
+//debug, not that important
 if (process.env.NODE_ENV !== 'production') {
   mongoose.connection.once('open', () => {
     const db = mongoose.connection.db;
