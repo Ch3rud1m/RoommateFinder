@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RoommatePlus</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <h1>Java Console</h1>
+    <form id="javaForm">
+    <select id="program">
+    <option value="Match">Match</option>
+    <option value="GeneratePairs">GeneratePairs</option>
+    </select>
+    <input type="text" id="inputArg" placeholder="Enter argument">
+    <button type="submit">Run Java Program</button>
+    </form>
+    <pre id="output"></pre>
+
+    <script>
+    document.getElementById('javaForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const program = document.getElementById('program').value;
+    const inputArg = document.getElementById('inputArg').value;
+    const response = await fetch('/run-java', {
+    method: 'POST',
+    headers: {
+    'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ program, arg: inputArg })
+    });
+    const result = await response.text();
+    document.getElementById('output').textContent = result;
+    });
+ </script>
+</body>
+</html>
