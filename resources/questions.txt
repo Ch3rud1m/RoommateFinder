@@ -1,0 +1,95 @@
+0.8q
+What time do you typically wake up?
+Before 5:00 am
+5:00 am to 6:00 am
+6:00 am to 7:00 am
+7:00 am to 8:00 am
+8:00 am to 9:00 am
+9:00 am to 10:00 am
+10:00 am to 11:00 am
+After 11:00 am
+ 
+0.8q
+What time do you typically go to bed?
+Before 8:00 pm
+8:00 pm to 9:00 pm
+9:00 pm to 10:00 pm
+10:00 pm to 11:00 pm
+11:00 pm to 12:00 am
+12:00 am to 1:00 am
+1:00 am to 2:00 am
+2:00 am to 3:00 am
+After 3:00 am
+ 
+0.5q
+How freaky are you (1-5)?
+1 (not freaky)
+2
+3
+4
+5 (really freaky)
+ 
+0.8c
+Do you smoke, use recreational drugs, and/or drink?
+Yes - all
+Yes - some
+No - none of the above
+ 
+0.6c
+Do you prefer a substance free roommate?
+Yes
+No
+No preference
+ 
+0.8q
+How clean do you keep your room?
+1 (very dirty)
+2
+3
+4
+5 (completely spotless)
+ 
+0.3q
+How many hours do you expect to stay in your dorm a day (apart from sleeping)?
+0-2 hours
+2-4 hours
+4-8 hours
+8-12 hours
+12+ hours
+ 
+0.3c
+Which of these categories best matches your hobbies/interests?
+Arts and crafts
+Cooking
+Literature and writing
+Mindfulness
+Music and performing arts
+Outdoor activities
+Social and community activities
+Sports and fitness
+Technology and gaming
+ 
+0.2c
+What is your expected area of study?
+Arts and Music
+Biomedical and Health Sciences
+Business and Management
+Civil or Mechanical Engineering
+Communications and Media
+Economics
+Electrical Engineering and Computer Science
+Humanities
+Mathematics and Statistics
+Natural Sciences
+Public Policy
+Social Sciences
+Undecided
+ 
+0.3q
+Do you like to have friends come over to your dorm?
+1 (Never)
+2
+3
+4
+5 (Always)
+ 
