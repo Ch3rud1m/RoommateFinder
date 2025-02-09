@@ -26,30 +26,45 @@ const userSchema = new mongoose.Schema({
       required: true,
     }
   },
-
   preferences: {
-    sleepingHabits: {
+    sleepingHour: {
       type: String,
       required: true,
     },
-    cleanliness: {
-      type: Boolean,
+    wakingHour: {
+      type: String,
       required: true,
     },
     sexuallyActive: {
-      type: Boolean,
+      type: Number,
       required: true,
     },
     substanceUse: {
       type: Boolean,
       required: true,
     },
-    school: {
+    soberRoommate: {
+      type: Boolean,
+      required: true,
+    },
+    cleanliness: {
+      type: Number,
+      required: true,
+    },
+    hoursInDorm: {
+      type: String,
+      required: true,
+    },
+    hobbies: {
       type: String,
       required: true,
     },
     major: {
       type: String,
+      required: true,
+    },
+    friendsOver: {
+      type: Number,
       required: true,
     },
   },

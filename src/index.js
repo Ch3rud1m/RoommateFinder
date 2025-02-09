@@ -35,7 +35,7 @@ if (process.env.NODE_ENV !== 'production') {
       .then(() => {
         console.log('Database dropped');
 
-        const newUser = new User({
+        const newUser1 = new User({
           studentId: 'jlx5',
           studentName: 'Jamal Xiao',
           absolutes: {
@@ -44,19 +44,45 @@ if (process.env.NODE_ENV !== 'production') {
             gender: "male",
           },
           preferences: {
-            sleepingHabits: 'early',
-            cleanliness: true,
-            sexuallyActive: false,
+            sleepingHour: '12:00 am to 1:00 am',
+            wakingHour: '9:00 am to 10:00 am',
+            sexuallyActive: 5,
             substanceUse: false,
-            school: 'Pratt',
-            major: 'Electrical Enngineering',
+            soberRoommate: true,
+            cleanliness: 5,
+            hoursInDorm: '4-8 hours',
+            hobbies: 'Sports and fitness',
+            major: 'Electrical Engineering and Computer Science',
+            friendsOver: 4,
           },
         });
 
-        return newUser.save();
+        const newUser2 = new User({
+          studentId: 'ajy20',
+          studentName: 'Alec Yang',
+          absolutes: {
+            gradYear: 2028,
+            quadConnection: 'Keohane',
+            gender: "male",
+          },
+          preferences: {
+            sleepingHour: '12:00 am to 1:00 am',
+            wakingHour: '9:00 am to 10:00 am',
+            sexuallyActive: 5,
+            substanceUse: false,
+            soberRoommate: true,
+            cleanliness: 5,
+            hoursInDorm: '2-4 hours',
+            hobbies: 'Technology and gaming',
+            major: 'Biomedical and Health Sciences',
+            friendsOver: 2,
+          },
+        });
+
+        return Promise.all([newUser1.save(), newUser2.save()]);
       })
-      .then((user) => {
-        console.log('New user added:', user);
+      .then((users) => {
+        console.log('New users added:', users);
       })
       .catch((error) => {
         console.error('Error:', error);
